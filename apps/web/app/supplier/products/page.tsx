@@ -4,11 +4,14 @@ import React, { useState } from 'react';
 import Navbar from '../../../components/layout/Navbar';
 import { useAntiqueSupplyStore } from '../../../lib/store';
 import AddProductModal from '../../../components/supplier/AddProductModal';
+import { ProductPhoto } from '../../../components/media/Photo';
+import EditProductPhotos from '../../../components/media/EditProductPhotos';
 import { Plus, Package, Clock, Building2, MapPin } from 'lucide-react';
 
 export default function SupplierProductsPage() {
   const { data, activeOrg } = useAntiqueSupplyStore();
   const [isAddOpen, setIsAddOpen] = useState(false);
+  const [editingPhotos, setEditingPhotos] = useState<any>(null);
 
   const products = data.products.filter(
     p => p.organization_id === activeOrg.id || activeOrg.id === 'admin-platform'
@@ -45,16 +48,13 @@ export default function SupplierProductsPage() {
               className="bg-white rounded-2xl overflow-hidden border border-emerald-950/10 shadow-sm flex flex-col justify-between"
             >
               <div>
-                <div className="h-44 bg-slate-100 overflow-hidden">
-                  <img
-                    src={p.image_urls[0]}
-                    alt={p.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="aspect-square bg-slate-100 overflow-hidden">
+                  <ProductPhoto product={p} contain />
                 </div>
                 <div className="p-5 space-y-2">
                   <span className="font-mono text-[10px] text-slate-400">SKU: {p.sku}</span>
                   <h3 className="font-bold text-slate-900 text-sm">{p.name}</h3>
+                  <button className="text-xs text-emerald-800 underline" onClick={() => setEditingPhotos(p)}>Manage photos</button>
                   <p className="text-xs text-slate-500 line-clamp-2">{p.description}</p>
                   <div className="pt-2 flex justify-between text-xs">
                     <span className="font-bold text-antique-green">
@@ -69,6 +69,7 @@ export default function SupplierProductsPage() {
         </div>
       </div>
       <AddProductModal isOpen={isAddOpen} onClose={() => setIsAddOpen(false)} />
+      {editingPhotos && <EditProductPhotos key={editingPhotos.id} product={editingPhotos} onClose={() => setEditingPhotos(null)} />}
     </div>
   );
 }

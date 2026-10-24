@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { INITIAL_DATA, InitialDataState } from './mock-data';
+import { migrateDemoImages } from './demo-image-migration';
 import {
   canTransitionOrder,
   OrderStatus,
@@ -33,6 +34,7 @@ interface StoreContextType {
   ) => void;
   verifySupplier: (orgId: string, approved: boolean, notes?: string) => void;
   addProduct: (productData: any) => void;
+  updateProductPhotos: (productId: string, photos: string[]) => void;
   resetToInitial: () => void;
 }
 
@@ -53,7 +55,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        setData(JSON.parse(saved));
+        setData(migrateDemoImages(JSON.parse(saved)));
       }
       const savedRole = localStorage.getItem(ROLE_KEY) as UserRole;
       if (savedRole) {
@@ -495,11 +497,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       stock_available: productData.stock_available || 10,
     };
 
-    setData(prev => ({
-      ...prev,
-      products: [newProd, ...prev.products],
+    const next = {
+      ...data,
+      products: [newProd, ...data.products],
       inventory: {
-        ...prev.inventory,
+        ...data.inventory,
         [id]: {
           physical_stock: productData.stock_available || 10,
           reserved_stock: 0,
@@ -509,7 +511,20 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           daily_production_capacity: productData.daily_capacity || 10,
         },
       },
-    }));
+    };
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); }
+    catch { throw new Error('Browser storage is full. Remove photos or use smaller files before saving.'); }
+    setData(next);
+  };
+
+  const updateProductPhotos = (productId: string, photos: string[]) => {
+    const product = data.products.find(item => item.id === productId);
+    if (activeRole !== 'supplier' || !product || product.organization_id !== activeOrg.id) throw new Error('Select the supplier that owns this product.');
+    if (photos.length > 6) throw new Error('Maximum six photos per product.');
+    const next = { ...data, products: data.products.map(item => item.id === productId ? { ...item, image_urls: photos, is_demo: photos.some(src => src.startsWith('/images/editorial/')) || item.is_demo, photo_rights_confirmed: true } : item) };
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); }
+    catch { throw new Error('Browser storage is full. Remove photos or use smaller files.'); }
+    setData(next);
   };
 
   const resetToInitial = () => {
@@ -532,6 +547,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         adjustInventory,
         verifySupplier,
         addProduct,
+        updateProductPhotos,
         resetToInitial,
       }}
     >

@@ -52,6 +52,7 @@ fun CatalogScreen(
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
+        Text("Sample catalog · illustrative photos, not verified supplier goods", fontSize = 11.sp, color = ForestGreen, modifier = Modifier.padding(bottom = 8.dp))
         // Search Input
         OutlinedTextField(
             value = searchQuery,
@@ -61,7 +62,7 @@ fun CatalogScreen(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(12.dp),
             singleLine = true,
-            colors = TextFieldDefaults.outlinedTextFieldColors(
+            colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = ForestGreen,
                 unfocusedBorderColor = Color(0xFFD0D7D3)
             )
@@ -106,12 +107,12 @@ fun CatalogScreen(
 
         // Product Grid
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
+            columns = GridCells.Adaptive(160.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             modifier = Modifier.fillMaxSize()
         ) {
-            items(filteredProducts) { product ->
+            items(filteredProducts, key = { it.id }) { product ->
                 ProductCard(
                     product = product,
                     onClick = { onProductClick(product) },
@@ -129,6 +130,7 @@ fun ProductCard(
     onRequestQuote: () -> Unit
 ) {
     Card(
+        onClick = onClick,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
@@ -136,13 +138,8 @@ fun ProductCard(
     ) {
         Column(modifier = Modifier.fillMaxWidth()) {
             // Product Image
-            Box(modifier = Modifier.height(110.dp).fillMaxWidth()) {
-                AsyncImage(
-                    model = product.imageUrls.firstOrNull() ?: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600",
-                    contentDescription = product.name,
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize()
-                )
+            Box(modifier = Modifier.fillMaxWidth().aspectRatio(1f)) {
+                ProductPhoto(source = product.imageUrls.firstOrNull(), description = product.name, isDemo = product.isDemo, modifier = Modifier.fillMaxSize())
                 // Municipality badge
                 Surface(
                     color = Color(0xCC17252A),

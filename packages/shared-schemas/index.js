@@ -98,7 +98,8 @@ export const ProductSchema = z.object({
   lead_time_days: z.number().int().nonnegative('Lead time in days'),
   packaging_details: z.string().optional(),
   origin_municipality: z.string().default('San Jose de Buenavista'),
-  image_urls: z.array(z.string().url()).default([]),
+  image_urls: z.array(z.string().refine(value => /^https:\/\//.test(value) || /^\/images\/editorial\/[a-z0-9-]+\.webp$/.test(value) || /^\/api\/v1\/media\/[a-f0-9-]+$/.test(value), 'Use an approved image path')).max(6).default([]),
+  is_demo: z.boolean().default(false),
   is_active: z.boolean().default(true),
   // Inventory overview
   stock_available: z.number().int().nonnegative().default(0),

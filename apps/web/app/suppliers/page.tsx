@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import Link from 'next/link';
+import Photo from '../../components/media/Photo';
 
 export default function SuppliersDirectoryPage() {
   const { data } = useAntiqueSupplyStore();
@@ -37,7 +38,7 @@ export default function SuppliersDirectoryPage() {
               Antique Producers & Cooperatives Directory
             </h1>
             <p className="text-xs text-slate-500 mt-1">
-              Direct access to registered agricultural cooperatives, weavers associations, and local manufacturers.
+              Sample producer profiles. Cover photography illustrates the sector and does not depict or verify these organizations.
             </p>
           </div>
           <span className="text-xs px-3 py-1.5 bg-emerald-50 text-emerald-800 font-bold rounded-lg border border-emerald-200 self-start sm:self-auto">
@@ -55,6 +56,7 @@ export default function SuppliersDirectoryPage() {
                 key={sup.id}
                 className="bg-white rounded-2xl border border-emerald-950/10 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4"
               >
+                {sup.banner_image && <div className="aspect-video rounded-xl overflow-hidden"><Photo src={sup.banner_image} alt="Sector illustration" label="Illustrative cover · sample supplier" sizes="(max-width: 768px) 100vw, 50vw" /></div>}
                 <div>
                   <div className="flex items-start justify-between gap-3">
                     <div>

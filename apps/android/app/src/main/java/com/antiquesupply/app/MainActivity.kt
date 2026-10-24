@@ -1,6 +1,7 @@
 package com.antiquesupply.app
 
 import android.os.Bundle
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
@@ -36,6 +37,22 @@ class MainActivity : ComponentActivity() {
 fun MainAppScaffold() {
     val navController = rememberNavController()
     var currentScreen by remember { mutableStateOf("catalog") }
+    var selectedProduct by remember { mutableStateOf<ProductDto?>(null) }
+    var selectedPhoto by remember { mutableStateOf(0) }
+    selectedProduct?.let { product ->
+        AlertDialog(
+            onDismissRequest = { selectedProduct = null },
+            title = { Text(product.name, fontSize = 16.sp) },
+            text = { Column {
+                ProductPhoto(product.imageUrls.getOrNull(selectedPhoto), product.name, product.isDemo, Modifier.fillMaxWidth().aspectRatio(1f))
+                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                    product.imageUrls.forEachIndexed { index, _ -> TextButton(onClick = { selectedPhoto = index }) { Text("${index + 1}") } }
+                }
+                Text("Sample imagery illustrates materials; packaging and specifications are not verified.", fontSize = 12.sp)
+            } },
+            confirmButton = { TextButton(onClick = { selectedProduct = null }) { Text("Close") } }
+        )
+    }
 
     // Seed mock data for Android demo / offline fallback
     val mockProducts = remember {
@@ -52,7 +69,8 @@ fun MainAppScaffold() {
                 minOrderQuantity = 2,
                 leadTimeDays = 3,
                 originMunicipality = "Laua-an",
-                imageUrls = listOf("https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=600"),
+                isDemo = true,
+                imageUrls = listOf("file:///android_asset/images/editorial/muscovado-detail.webp"),
                 stockAvailable = 75
             ),
             ProductDto(
@@ -67,7 +85,8 @@ fun MainAppScaffold() {
                 minOrderQuantity = 10,
                 leadTimeDays = 14,
                 originMunicipality = "Bugasong",
-                imageUrls = listOf("https://images.unsplash.com/photo-1606744888344-498238f0176a?w=600"),
+                isDemo = true,
+                imageUrls = listOf("file:///android_asset/images/editorial/antique-textile.webp"),
                 stockAvailable = 20
             ),
             ProductDto(
@@ -82,7 +101,8 @@ fun MainAppScaffold() {
                 minOrderQuantity = 2,
                 leadTimeDays = 5,
                 originMunicipality = "Tibiao",
-                imageUrls = listOf("https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600"),
+                isDemo = true,
+                imageUrls = listOf("file:///android_asset/images/editorial/coconut-oil.webp"),
                 stockAvailable = 36
             )
         )
@@ -171,7 +191,7 @@ fun MainAppScaffold() {
             when (currentScreen) {
                 "catalog" -> CatalogScreen(
                     products = mockProducts,
-                    onProductClick = { /* Inspect */ },
+                    onProductClick = { selectedPhoto = 0; selectedProduct = it },
                     onRequestQuote = { currentScreen = "create_rfq" }
                 )
                 "create_rfq" -> CreateRfqScreen(

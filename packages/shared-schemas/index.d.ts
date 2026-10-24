@@ -32,7 +32,7 @@ export declare const CreatePurchaseOrderSchema: z.ZodObject<any>;
 export declare const InventoryMovementSchema: z.ZodObject<any>;
 
 export type Organization = z.infer<typeof OrganizationSchema>;
-export type Product = z.infer<typeof ProductSchema>;
+export type Product = z.infer<typeof ProductSchema> & { id: string; name: string; image_urls: string[]; is_demo?: boolean };
 export type CreateRFQ = z.infer<typeof CreateRFQSchema>;
 export type CreateQuotation = z.infer<typeof CreateQuotationSchema>;
 export type CreatePurchaseOrder = z.infer<typeof CreatePurchaseOrderSchema>;

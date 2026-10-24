@@ -65,14 +65,14 @@ export default function Navbar({ onOpenCreateRFQ, onOpenAddProduct }: NavbarProp
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo & Tagline */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 min-w-0">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-9 h-9 rounded-lg bg-antique-green flex items-center justify-center text-white shadow-md shadow-emerald-900/20 group-hover:bg-emerald-800 transition-colors">
                 <span className="font-extrabold text-lg text-amber-400">A</span>
                 <span className="font-bold text-sm text-white">S</span>
               </div>
               <div>
-                <span className="text-xl font-extrabold tracking-tight text-antique-slate-900 flex items-center gap-1">
+                <span className="text-base sm:text-xl font-extrabold tracking-tight text-antique-slate-900 flex items-center gap-1">
                   Antique<span className="text-antique-green">Supply</span>
                 </span>
                 <span className="hidden sm:block text-[10px] tracking-widest text-emerald-800 font-semibold uppercase -mt-1">
@@ -83,7 +83,7 @@ export default function Navbar({ onOpenCreateRFQ, onOpenAddProduct }: NavbarProp
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <nav className="hidden xl:flex items-center space-x-1 lg:space-x-2">
             {currentLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href;
@@ -110,7 +110,7 @@ export default function Navbar({ onOpenCreateRFQ, onOpenAddProduct }: NavbarProp
           </nav>
 
           {/* Actions: Notifications & Primary CTA */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 sm:gap-3 shrink-0">
             {/* Notification Bell */}
             <div className="relative">
               <button
@@ -150,27 +150,30 @@ export default function Navbar({ onOpenCreateRFQ, onOpenAddProduct }: NavbarProp
             {activeRole === 'buyer' && onOpenCreateRFQ && (
               <button
                 onClick={onOpenCreateRFQ}
+                aria-label="Create RFQ"
                 className="flex items-center gap-1.5 bg-antique-green text-white hover:bg-emerald-800 text-xs font-semibold px-3.5 py-2 rounded-lg shadow-sm shadow-emerald-900/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <PlusCircle className="w-4 h-4 text-amber-400" />
-                <span>Create RFQ</span>
+                <span className="hidden sm:inline">Create RFQ</span>
               </button>
             )}
 
             {activeRole === 'supplier' && onOpenAddProduct && (
               <button
                 onClick={onOpenAddProduct}
+                aria-label="Add Product"
                 className="flex items-center gap-1.5 bg-amber-600 text-white hover:bg-amber-700 text-xs font-semibold px-3.5 py-2 rounded-lg shadow-sm shadow-amber-900/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <PlusCircle className="w-4 h-4 text-white" />
-                <span>Add Product</span>
+                <span className="hidden sm:inline">Add Product</span>
               </button>
             )}
 
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-slate-600 hover:text-slate-900"
+              aria-label="Toggle navigation"
+              className="xl:hidden p-2 text-slate-600 hover:text-slate-900"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -179,7 +182,7 @@ export default function Navbar({ onOpenCreateRFQ, onOpenAddProduct }: NavbarProp
 
         {/* Mobile dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 py-3 space-y-1">
+          <div className="xl:hidden border-t border-slate-200 py-3 space-y-1">
             {currentLinks.map((link) => (
               <Link
                 key={link.name}

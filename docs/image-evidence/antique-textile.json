@@ -1,0 +1,87 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "154903549": {
+        "pageid": 154903549,
+        "ns": 6,
+        "title": "File:Patadyong Bugasong textile Antique AssociationH.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2502334,
+            "width": 4096,
+            "height": 3072,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Patadyong_Bugasong_textile_Antique_AssociationH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Patadyong_Bugasong_textile_Antique_AssociationH.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154903549",
+            "sha1": "57ff0ad614658c343137069d2c93b0a13f6dab77",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-11-05 11:34:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Patadyong Bugasong textile Antique AssociationH",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Files with no machine-readable author|Files with no machine-readable source|Media missing infobox template|Self-published work|Patadyong|Culture of Bugasong",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "Valenzuela400",
+                "source": "Manually checked source file history and self-published license on 2026-10-24"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

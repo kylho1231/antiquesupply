@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import ProductGallery from '../media/ProductGallery';
 import { Product } from '@antiquesupply/shared-schemas';
 import { useAntiqueSupplyStore } from '../../lib/store';
 import {
@@ -44,15 +45,11 @@ export default function ProductDetailModal({
 
         <div className="grid md:grid-cols-2">
           {/* Image gallery */}
-          <div className="relative h-64 md:h-full bg-slate-100 flex items-center justify-center overflow-hidden">
-            <img
-              src={product.image_urls[0] || 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800'}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-3 left-3 bg-antique-slate-900/85 backdrop-blur-md text-white text-[11px] px-2.5 py-1 rounded-md flex items-center gap-1.5 border border-white/20">
+          <div className="bg-stone-100 overflow-hidden">
+            <ProductGallery key={product.id} product={product} />
+            <div className="text-slate-700 text-[11px] px-3 py-2 flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-amber-400" />
-              <span>Origin: {product.origin_municipality}, Antique</span>
+              <span>{product.is_demo ? 'Sample listing origin' : 'Product origin'}: {product.origin_municipality}, Antique</span>
             </div>
           </div>
 

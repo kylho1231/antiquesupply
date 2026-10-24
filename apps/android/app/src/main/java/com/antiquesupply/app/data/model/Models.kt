@@ -49,6 +49,7 @@ data class ProductDto(
     @SerializedName("lead_time_days") val leadTimeDays: Int,
     @SerializedName("origin_municipality") val originMunicipality: String,
     @SerializedName("image_urls") val imageUrls: List<String> = emptyList(),
+    @SerializedName("is_demo") val isDemo: Boolean = false,
     @SerializedName("stock_available") val stockAvailable: Int = 0,
     @SerializedName("is_made_to_order") val isMadeToOrder: Boolean = false
 )

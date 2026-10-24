@@ -39,7 +39,7 @@ export default function RootLayout({
                 <span className="text-slate-500">— Sourcing platform for Antique & Panay Island</span>
               </div>
               <div className="text-[11px] text-slate-500">
-                Philippine B2B Procurement Platform • Compliant with Data Privacy Act of 2012
+                <a href="/image-credits" className="text-slate-300 underline">Photography & licenses</a>
               </div>
             </div>
           </footer>

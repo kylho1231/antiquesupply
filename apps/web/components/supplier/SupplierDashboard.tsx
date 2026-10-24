@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import CreateQuotationModal from './CreateQuotationModal';
 import AddProductModal from './AddProductModal';
+import Photo from '../media/Photo';
 
 interface SupplierDashboardProps {
   onNavigateToTab?: (tab: string) => void;
@@ -55,6 +56,10 @@ export default function SupplierDashboard({ onNavigateToTab }: SupplierDashboard
 
   return (
     <div className="space-y-6 pb-16">
+      <div className="grid md:grid-cols-[1fr_2fr] overflow-hidden rounded-2xl bg-white border border-stone-200">
+        <div className="aspect-video"><Photo src="/images/editorial/philippine-logistics.webp" alt="Warehouse at the port of Nasipit, Philippines" sizes="(max-width: 768px) 100vw, 400px" /></div>
+        <div className="p-6 flex flex-col justify-center"><p className="uppercase tracking-widest text-xs text-emerald-800 font-semibold">From local craft to commercial supply</p><h2 className="text-xl font-bold mt-2">Show buyers the products you make.</h2><p className="text-sm text-slate-600 mt-2">Add clear photographs of your goods, packaging and available sizes. Logistics illustration: the port of Nasipit in Mindanao. This is not a supplier facility or an Antique location.</p></div>
+      </div>
       {/* Welcome Banner */}
       <div className="bg-antique-slate-900 text-white rounded-2xl p-6 md:p-8 border border-emerald-900/40 shadow-xl relative overflow-hidden">
         <div className="absolute right-0 top-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />

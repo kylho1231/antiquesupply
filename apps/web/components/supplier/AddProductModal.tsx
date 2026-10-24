@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import PhotoEditor from '../media/PhotoEditor';
 import { useAntiqueSupplyStore } from '../../lib/store';
 import {
   ANTIQUE_MUNICIPALITIES,
@@ -32,12 +33,16 @@ export default function AddProductModal({ isOpen, onClose }: AddProductModalProp
   const [isMadeToOrder, setIsMadeToOrder] = useState(false);
   const [dailyCapacity, setDailyCapacity] = useState(15);
   const [error, setError] = useState<string | null>(null);
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [ownsPhotos, setOwnsPhotos] = useState(false);
+  const [preparingPhotos, setPreparingPhotos] = useState(false);
 
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    if (preparingPhotos || (photos.length > 0 && !ownsPhotos)) { setError('Confirm that you are authorized to use these photos.'); return; }
 
     if (!name.trim() || !sku.trim() || !description.trim()) {
       setError('Product name, SKU, and description are required.');
@@ -57,13 +62,14 @@ export default function AddProductModal({ isOpen, onClose }: AddProductModalProp
         lead_time_days: Number(leadTimeDays),
         origin_municipality: originMunicipality,
         packaging_details: packagingDetails,
-        image_urls: [
-          'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&auto=format&fit=crop&q=80',
-        ],
+        image_urls: photos,
+        is_demo: false,
+        photo_rights_confirmed: ownsPhotos,
         stock_available: Number(stockAvailable),
         is_made_to_order: isMadeToOrder,
         daily_capacity: Number(dailyCapacity),
       });
+      setPhotos([]); setOwnsPhotos(false);
       onClose();
     } catch (err: any) {
       setError(err?.message || 'Failed to add product');
@@ -97,6 +103,31 @@ export default function AddProductModal({ isOpen, onClose }: AddProductModalProp
             </div>
           )}
 
+          <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold text-slate-700 tracking-wide">
+                Product Media & Photography
+              </span>
+              <span className="text-[10px] text-slate-500">
+                Max 6 photos · JPG, PNG, WebP
+              </span>
+            </div>
+            <PhotoEditor photos={photos} onChange={setPhotos} onBusyChange={setPreparingPhotos} />
+            {photos.length > 0 && (
+              <label className="flex items-start gap-2 pt-2 border-t border-slate-200/80 text-[11px] text-slate-700 font-medium cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={ownsPhotos}
+                  onChange={event => setOwnsPhotos(event.target.checked)}
+                  required
+                  className="mt-0.5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                />
+                <span>
+                  I confirm that our organization owns or holds legal commercial rights to publish these product photographs.
+                </span>
+              </label>
+            )}
+          </div>
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Product Title *</label>
@@ -272,6 +303,7 @@ export default function AddProductModal({ isOpen, onClose }: AddProductModalProp
             </button>
             <button
               type="submit"
+              disabled={preparingPhotos}
               className="px-5 py-2 font-bold text-white bg-antique-green hover:bg-emerald-800 rounded-lg shadow-sm"
             >
               Save & List Product
