@@ -1,0 +1,27 @@
+{
+  "name": "antiquesupply-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AntiqueSupply — B2B Marketplace, Procurement Management, and Supplier Operations Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace=apps/web run dev",
+    "build": "npm --workspace=apps/web run build",
+    "test": "node --test tests/**/*.test.mjs",
+    "lint": "npm --workspace=apps/web run lint"
+  },
+  "keywords": [
+    "b2b",
+    "marketplace",
+    "procurement",
+    "philippines",
+    "antique",
+    "agriculture",
+    "supply-chain"
+  ],
+  "author": "AntiqueSupply Team",
+  "license": "UNLICENSED"
+}

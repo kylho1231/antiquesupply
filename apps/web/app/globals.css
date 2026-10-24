@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-green: #0F5132;
+  --dark-slate: #17252A;
+  --warm-amber: #F4B942;
+  --soft-ivory: #F8FAF7;
+  --clean-white: #FFFFFF;
+}
+
+body {
+  color: #17252A;
+  background-color: #F8FAF7;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GetLayers-style cinematic layer utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 81, 50, 0.12);
+}
+
+.glass-panel-dark {
+  background: rgba(23, 37, 42, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ambient-gradient-mesh {
+  background: radial-gradient(circle at 15% 20%, rgba(15, 81, 50, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 85% 15%, rgba(244, 185, 66, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 50% 80%, rgba(15, 81, 50, 0.08) 0%, transparent 50%);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.025em;
+}
+
+/* Custom scrollbar for procurement tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEF2EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A5D6A7;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0F5132;
+}

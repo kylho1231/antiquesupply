@@ -1,0 +1,14 @@
+{
+  "name": "@antiquesupply/shared-schemas",
+  "version": "1.0.0",
+  "description": "Shared domain models, Zod schemas, and validation contracts for AntiqueSupply",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  }
+}

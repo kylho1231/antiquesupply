@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AntiqueSupply</string>
+    <string name="tagline">Local Products. Bigger Markets.</string>
+    <string name="nav_marketplace">Marketplace</string>
+    <string name="nav_rfqs">RFQs</string>
+    <string name="nav_orders">Orders</string>
+    <string name="nav_supplier">Supplier Hub</string>
+</resources>

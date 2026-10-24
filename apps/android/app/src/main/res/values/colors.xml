@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_forest_green">#0F5132</color>
+    <color name="primary_green_dark">#0A3B24</color>
+    <color name="dark_slate">#17252A</color>
+    <color name="warm_amber">#F4B942</color>
+    <color name="soft_ivory">#F8FAF7</color>
+    <color name="clean_white">#FFFFFF</color>
+</resources>
