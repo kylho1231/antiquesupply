@@ -7,11 +7,11 @@ import { normalizeProductPhoto, MAX_IMAGE_BYTES } from '../apps/web/lib/image-co
 
 test('Editorial assets have complete rights records, matching files and Android copies', async () => {
   const manifest = JSON.parse(await fs.readFile('apps/web/public/image-manifest.json', 'utf8'));
-  assert.ok(manifest.length >= 8);
+  assert.equal(manifest.length, 100);
   for (const asset of manifest) {
     for (const key of ['creator', 'license', 'licenseUrl', 'sourceUrl', 'checkedAt', 'usage', 'alt', 'path']) assert.ok(asset[key], `${asset.id}: missing ${key}`);
     assert.match(asset.sourceUrl, /^https:\/\/commons.wikimedia.org\/wiki\/File:/);
-    assert.match(asset.license, /^(CC BY(?:-SA)? [234]\.0|CC0)$/);
+    assert.match(asset.license, /^(CC BY(?:-SA)? [234]\.0|CC0|Public domain)$/i);
     const web = await fs.readFile(`apps/web/public${asset.path}`);
     const android = await fs.readFile(`apps/android/app/src/main/assets${asset.path}`);
     assert.deepEqual(web, android);

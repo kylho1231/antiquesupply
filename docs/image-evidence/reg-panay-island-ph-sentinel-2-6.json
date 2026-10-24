@@ -1,0 +1,23 @@
+{
+  "id": "reg-panay-island-ph-sentinel-2-6",
+  "title": "Panay Island, PH, Sentinel-2.jpg",
+  "category": "regional",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panay_Island,_PH,_Sentinel-2.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Panay_Island%2C_PH%2C_Sentinel-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "creator": "Sentinel-2 cloudless 2016 by EOX IT Services GmbH is licensed under a Creative Commons Attribution 4.0 International License.",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Sentinel-2 cloudless 2016 by EOX IT Services GmbH is licensed under a Creative Commons Attribution 4.0 International License. / Wikimedia Commons / CC BY-SA 4.0",
+  "checkedAt": "2026-10-24T12:14:45.008Z",
+  "usage": "Panay Regional Expansion & Boracay illustrative sample; B2B procurement catalog",
+  "alt": "Panay Island,  Philippines, Sentinel-2",
+  "path": "/images/editorial/reg-panay-island-ph-sentinel-2-6.webp",
+  "androidPath": "file:///android_asset/images/editorial/reg-panay-island-ph-sentinel-2-6.webp",
+  "width": 564,
+  "height": 597,
+  "bytes": 34456,
+  "sha256": "d56db81688fa8885a51fb8bd029e2bd0cc6fccea62f237e6d5c5a372c309e6c4",
+  "modifications": "Resized and converted to WebP; EXIF metadata stripped for user privacy. Derivatives retain the source license.",
+  "kind": "editorial",
+  "commercialUse": true
+}

@@ -1,99 +1,23 @@
 {
-  "batchcomplete": "",
-  "query": {
-    "pages": {
-      "126335166": {
-        "pageid": 126335166,
-        "ns": 6,
-        "title": "File:Tultul Asin.jpg",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "size": 5223549,
-            "width": 4000,
-            "height": 4000,
-            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Tultul_Asin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tultul_Asin.jpg",
-            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=126335166",
-            "sha1": "a840566600162bee4a60ffe946d0a01d69a60ae2",
-            "extmetadata": {
-              "DateTime": {
-                "value": "2022-12-05 11:56:35",
-                "source": "mediawiki-metadata",
-                "hidden": ""
-              },
-              "ObjectName": {
-                "value": "Tultul Asin",
-                "source": "mediawiki-metadata"
-              },
-              "CommonsMetadataExtension": {
-                "value": 1.2,
-                "source": "extension",
-                "hidden": ""
-              },
-              "Categories": {
-                "value": "Self-published work|Images from Wiki Loves Food 2022 in the Philippines|Uploaded via Campaign:wlfood-ph|Asín tibuok|Philippine salt|Photographs by User:Lokalpedia",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "Assessments": {
-                "value": "",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "ImageDescription": {
-                "value": "Artisanal salt blocks of Hoskyn, Guimaras. This salt is treated as a viand by locals. These salt blocks are produced by Emma and Serafin Ganila, two of the few remaining tultul salt masters of Guimaras. It is made with ashes of assorted driftwood (dagsa) doused with seawater for several days. Ashes are collected and placed in a filter called kaing, this serves as a strainer for new seawater. Strained water are boiled in hurnohan. The salt-makers add coconut milk to the liquid for added savory flavor.",
-                "source": "commons-desc-page"
-              },
-              "DateTimeOriginal": {
-                "value": "2021-07-26 07:54:37",
-                "source": "commons-desc-page"
-              },
-              "Credit": {
-                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
-                "source": "commons-desc-page"
-              },
-              "Artist": {
-                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Lokalpedia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Lokalpedia (page does not exist)\">Lokalpedia</a>",
-                "source": "commons-desc-page"
-              },
-              "LicenseShortName": {
-                "value": "CC BY-SA 4.0",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "UsageTerms": {
-                "value": "Creative Commons Attribution-Share Alike 4.0",
-                "source": "commons-desc-page"
-              },
-              "AttributionRequired": {
-                "value": "true",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "LicenseUrl": {
-                "value": "https://creativecommons.org/licenses/by-sa/4.0",
-                "source": "commons-desc-page"
-              },
-              "Copyrighted": {
-                "value": "True",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "Restrictions": {
-                "value": "",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "License": {
-                "value": "cc-by-sa-4.0",
-                "source": "commons-templates",
-                "hidden": ""
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
+  "id": "regional-salt",
+  "title": "Tultul Asin.jpg",
+  "category": "food_spices",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tultul_Asin.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Tultul_Asin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "creator": "Lokalpedia",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "attribution": "Lokalpedia / Wikimedia Commons / CC BY-SA 4.0",
+  "checkedAt": "2026-10-24T12:03:29.744Z",
+  "usage": "Regional food category only; not Patnongon salt flakes",
+  "alt": "Traditional tultul salt from the Philippines",
+  "path": "/images/editorial/regional-salt.webp",
+  "androidPath": "file:///android_asset/images/editorial/regional-salt.webp",
+  "width": 1000,
+  "height": 1000,
+  "bytes": 53770,
+  "sha256": "7402f1d3f59447b6c6288715df72a0c6bc3200dcbd7d386e6013fba93392ca19",
+  "modifications": "Resized and converted to WebP; EXIF metadata stripped for user privacy. Derivatives retain the source license.",
+  "kind": "editorial",
+  "commercialUse": true
 }

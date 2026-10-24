@@ -1,87 +1,23 @@
 {
-  "batchcomplete": "",
-  "query": {
-    "pages": {
-      "154903549": {
-        "pageid": 154903549,
-        "ns": 6,
-        "title": "File:Patadyong Bugasong textile Antique AssociationH.jpg",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "size": 2502334,
-            "width": 4096,
-            "height": 3072,
-            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Patadyong_Bugasong_textile_Antique_AssociationH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Patadyong_Bugasong_textile_Antique_AssociationH.jpg",
-            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154903549",
-            "sha1": "57ff0ad614658c343137069d2c93b0a13f6dab77",
-            "extmetadata": {
-              "DateTime": {
-                "value": "2024-11-05 11:34:33",
-                "source": "mediawiki-metadata",
-                "hidden": ""
-              },
-              "ObjectName": {
-                "value": "Patadyong Bugasong textile Antique AssociationH",
-                "source": "mediawiki-metadata"
-              },
-              "CommonsMetadataExtension": {
-                "value": 1.2,
-                "source": "extension",
-                "hidden": ""
-              },
-              "Categories": {
-                "value": "Files with no machine-readable author|Files with no machine-readable source|Media missing infobox template|Self-published work|Patadyong|Culture of Bugasong",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "Assessments": {
-                "value": "",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "LicenseShortName": {
-                "value": "CC BY-SA 4.0",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "UsageTerms": {
-                "value": "Creative Commons Attribution-Share Alike 4.0",
-                "source": "commons-desc-page"
-              },
-              "AttributionRequired": {
-                "value": "true",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "LicenseUrl": {
-                "value": "https://creativecommons.org/licenses/by-sa/4.0",
-                "source": "commons-desc-page"
-              },
-              "Copyrighted": {
-                "value": "True",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "Restrictions": {
-                "value": "",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "License": {
-                "value": "cc-by-sa-4.0",
-                "source": "commons-templates",
-                "hidden": ""
-              },
-              "Artist": {
-                "value": "Valenzuela400",
-                "source": "Manually checked source file history and self-published license on 2026-10-24"
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
+  "id": "antique-textile",
+  "title": "Patadyong Bugasong textile Antique AssociationH.jpg",
+  "category": "textiles",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Patadyong_Bugasong_textile_Antique_AssociationH.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Patadyong_Bugasong_textile_Antique_AssociationH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "creator": "Valenzuela400",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "attribution": "Valenzuela400 / Wikimedia Commons / CC BY-SA 4.0",
+  "checkedAt": "2026-10-24T12:03:29.724Z",
+  "usage": "Weaving category and illustrative sample",
+  "alt": "Patadyong textiles from Bugasong, Antique",
+  "path": "/images/editorial/antique-textile.webp",
+  "androidPath": "file:///android_asset/images/editorial/antique-textile.webp",
+  "width": 1200,
+  "height": 900,
+  "bytes": 158494,
+  "sha256": "90b411393f2902fcbb34e808a3039a6080b220c308f3ac24d13c06239f843315",
+  "modifications": "Resized and converted to WebP; EXIF metadata stripped for user privacy. Derivatives retain the source license.",
+  "kind": "editorial",
+  "commercialUse": true
 }

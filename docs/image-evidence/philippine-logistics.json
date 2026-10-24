@@ -1,112 +1,23 @@
 {
-  "batchcomplete": "",
-  "query": {
-    "pages": {
-      "156284840": {
-        "pageid": 156284840,
-        "ns": 6,
-        "title": "File:Nasipit - port of Nasipit warehouse - Oct 2024.jpg",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "size": 4975736,
-            "width": 6000,
-            "height": 3375,
-            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nasipit_-_port_of_Nasipit_warehouse_-_Oct_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nasipit_-_port_of_Nasipit_warehouse_-_Oct_2024.jpg",
-            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=156284840",
-            "sha1": "ede4453bc046b2667cc995ff586c7fae230613f3",
-            "extmetadata": {
-              "DateTime": {
-                "value": "2024-12-05 09:17:39",
-                "source": "mediawiki-metadata",
-                "hidden": ""
-              },
-              "ObjectName": {
-                "value": "Nasipit - port of Nasipit warehouse - Oct 2024",
-                "source": "mediawiki-metadata"
-              },
-              "CommonsMetadataExtension": {
-                "value": 1.2,
-                "source": "extension",
-                "hidden": ""
-              },
-              "Categories": {
-                "value": "Taken with Nikon D3500|Self-published work|Warehouses in the Philippines|Files with coordinates missing SDC location of creation|Philippines photographs taken on 2024-10-24|October 2024 in the Philippines|Port of Nasipit",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "Assessments": {
-                "value": "quality",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "GPSLatitude": {
-                "value": "8.978840",
-                "source": "commons-desc-page"
-              },
-              "GPSLongitude": {
-                "value": "125.336160",
-                "source": "commons-desc-page"
-              },
-              "GPSMapDatum": {
-                "value": "WGS-84",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "ImageDescription": {
-                "value": "Warehouse at the Port of Nasipit, Mindanao island, Philippines.",
-                "source": "commons-desc-page"
-              },
-              "DateTimeOriginal": {
-                "value": "2024-10-24 12:59:57",
-                "source": "commons-desc-page"
-              },
-              "Credit": {
-                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
-                "source": "commons-desc-page"
-              },
-              "Artist": {
-                "value": "<a href=\"//commons.wikimedia.org/wiki/User:BigDom\" title=\"User:BigDom\">Dominic Nelson</a>",
-                "source": "commons-desc-page"
-              },
-              "LicenseShortName": {
-                "value": "CC BY-SA 4.0",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "UsageTerms": {
-                "value": "Creative Commons Attribution-Share Alike 4.0",
-                "source": "commons-desc-page"
-              },
-              "AttributionRequired": {
-                "value": "true",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "LicenseUrl": {
-                "value": "https://creativecommons.org/licenses/by-sa/4.0",
-                "source": "commons-desc-page"
-              },
-              "Copyrighted": {
-                "value": "True",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "Restrictions": {
-                "value": "",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "License": {
-                "value": "cc-by-sa-4.0",
-                "source": "commons-templates",
-                "hidden": ""
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
+  "id": "philippine-logistics",
+  "title": "Nasipit - port of Nasipit warehouse - Oct 2024.jpg",
+  "category": "logistics",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasipit_-_port_of_Nasipit_warehouse_-_Oct_2024.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nasipit_-_port_of_Nasipit_warehouse_-_Oct_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "creator": "Dominic Nelson",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "attribution": "Dominic Nelson / Wikimedia Commons / CC BY-SA 4.0",
+  "checkedAt": "2026-10-24T12:03:29.756Z",
+  "usage": "Supplier dashboard logistics illustration; not an Antique facility",
+  "alt": "Warehouse at the port of Nasipit, Philippines",
+  "path": "/images/editorial/philippine-logistics.webp",
+  "androidPath": "file:///android_asset/images/editorial/philippine-logistics.webp",
+  "width": 1200,
+  "height": 674,
+  "bytes": 99182,
+  "sha256": "ac2aceb1b0847842875a95df198110c2ea62055733338c85233416cb2dc1e39c",
+  "modifications": "Resized and converted to WebP; EXIF metadata stripped for user privacy. Derivatives retain the source license.",
+  "kind": "editorial",
+  "commercialUse": true
 }

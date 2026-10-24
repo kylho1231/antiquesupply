@@ -1,112 +1,23 @@
 {
-  "batchcomplete": "",
-  "query": {
-    "pages": {
-      "179320140": {
-        "pageid": 179320140,
-        "ns": 6,
-        "title": "File:Muscovado 04.jpg",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "size": 8130681,
-            "width": 4096,
-            "height": 3072,
-            "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Muscovado_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Muscovado_04.jpg",
-            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=179320140",
-            "sha1": "0b9ffc6985b420044dfefa4251e7324a16aeb44c",
-            "extmetadata": {
-              "DateTime": {
-                "value": "2025-12-02 18:07:01",
-                "source": "mediawiki-metadata",
-                "hidden": ""
-              },
-              "ObjectName": {
-                "value": "Muscovado 04",
-                "source": "mediawiki-metadata"
-              },
-              "CommonsMetadataExtension": {
-                "value": 1.2,
-                "source": "extension",
-                "hidden": ""
-              },
-              "Categories": {
-                "value": "Self-published work|Files with coordinates missing SDC location of creation|Muscovado|Projekat Viki Senior 2025|Photographs by Milica Buha",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "Assessments": {
-                "value": "",
-                "source": "commons-categories",
-                "hidden": ""
-              },
-              "GPSLatitude": {
-                "value": "43.143295",
-                "source": "commons-desc-page"
-              },
-              "GPSLongitude": {
-                "value": "20.515207",
-                "source": "commons-desc-page"
-              },
-              "GPSMapDatum": {
-                "value": "WGS-84",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "ImageDescription": {
-                "value": "Muscovado sugar",
-                "source": "commons-desc-page"
-              },
-              "DateTimeOriginal": {
-                "value": "2025-08-29 09:14:53",
-                "source": "commons-desc-page"
-              },
-              "Credit": {
-                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
-                "source": "commons-desc-page"
-              },
-              "Artist": {
-                "value": "<a href=\"//commons.wikimedia.org/wiki/User:BuhaM\" title=\"User:BuhaM\">BuhaM</a>",
-                "source": "commons-desc-page"
-              },
-              "LicenseShortName": {
-                "value": "CC BY-SA 4.0",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "UsageTerms": {
-                "value": "Creative Commons Attribution-Share Alike 4.0",
-                "source": "commons-desc-page"
-              },
-              "AttributionRequired": {
-                "value": "true",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "LicenseUrl": {
-                "value": "https://creativecommons.org/licenses/by-sa/4.0",
-                "source": "commons-desc-page"
-              },
-              "Copyrighted": {
-                "value": "True",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "Restrictions": {
-                "value": "",
-                "source": "commons-desc-page",
-                "hidden": ""
-              },
-              "License": {
-                "value": "cc-by-sa-4.0",
-                "source": "commons-templates",
-                "hidden": ""
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
+  "id": "muscovado-detail",
+  "title": "Muscovado 04.jpg",
+  "category": "sugar",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muscovado_04.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Muscovado_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "creator": "BuhaM",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "attribution": "BuhaM / Wikimedia Commons / CC BY-SA 4.0",
+  "checkedAt": "2026-10-24T12:03:29.720Z",
+  "usage": "Illustrative sugar sample; not supplier packaging",
+  "alt": "Muscovado sugar texture",
+  "path": "/images/editorial/muscovado-detail.webp",
+  "androidPath": "file:///android_asset/images/editorial/muscovado-detail.webp",
+  "width": 1000,
+  "height": 750,
+  "bytes": 175656,
+  "sha256": "acd76102b4a2a8cecc0da5eb0e804328f9ab17524abe752351877eae0197fd5c",
+  "modifications": "Resized and converted to WebP; EXIF metadata stripped for user privacy. Derivatives retain the source license.",
+  "kind": "editorial",
+  "commercialUse": true
 }
