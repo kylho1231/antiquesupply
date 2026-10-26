@@ -4,33 +4,93 @@
 
 :root {
   --primary-green: #0F5132;
+  --primary-green-light: #E8F5E9;
+  --primary-green-hover: #0A3B24;
   --dark-slate: #17252A;
+  --dark-slate-deep: #0F181B;
   --warm-amber: #F4B942;
+  --warm-amber-hover: #D99B22;
   --soft-ivory: #F8FAF7;
   --clean-white: #FFFFFF;
+  --border-subtle: rgba(15, 81, 50, 0.12);
+  --focus-ring: #0F5132;
 }
 
-body {
-  color: #17252A;
-  background-color: #F8FAF7;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    color: #17252A;
+    background-color: #F8FAF7;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Accessible focus indicators across native elements */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #0F5132;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Touch target standard >= 44x44px */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Universal accessible focus ring helper */
+  .focus-ring {
+    outline: none;
+    transition: box-shadow 150ms ease-in-out;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid #0F5132;
+    outline-offset: 2px;
+  }
+
+  /* Hide scrollbar for clean horizontal pill scrolling on touch */
+  .no-scrollbar::-webkit-scrollbar,
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar,
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Reduced motion compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* GetLayers-style cinematic layer utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(15, 81, 50, 0.12);
 }
 
 .glass-panel-dark {
-  background: rgba(23, 37, 42, 0.88);
+  background: rgba(23, 37, 42, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .ambient-gradient-mesh {
@@ -50,7 +110,7 @@ body {
   letter-spacing: 0.025em;
 }
 
-/* Custom scrollbar for procurement tables */
+/* High-contrast smooth scrollbar for procurement tables */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

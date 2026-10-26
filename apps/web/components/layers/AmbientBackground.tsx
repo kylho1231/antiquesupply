@@ -6,6 +6,7 @@ import React, { useEffect, useRef } from 'react';
  * GetLayers-inspired cinematic ambient backdrop.
  * Renders an interactive WebGL/Canvas harmonic fluid shader with cursor-reactive
  * light nodes, emerald forest (#0F5132) and warm amber (#F4B942) currents.
+ * Fully respects prefers-reduced-motion accessibility settings.
  */
 export default function AmbientBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -20,15 +21,61 @@ export default function AmbientBackground() {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const handleResize = () => {
-      if (!canvas) return;
+      if (!canvas || !ctx) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
+      if (prefersReducedMotion) {
+        drawStaticBackground(ctx, width, height);
+      }
     };
     window.addEventListener('resize', handleResize);
 
+    const drawStaticBackground = (
+      context: CanvasRenderingContext2D,
+      w: number,
+      h: number
+    ) => {
+      context.clearRect(0, 0, w, h);
+      context.fillStyle = '#F8FAF7';
+      context.fillRect(0, 0, w, h);
+
+      // Static gentle auras
+      const grad1 = context.createRadialGradient(w * 0.2, h * 0.2, 0, w * 0.2, h * 0.2, 450);
+      grad1.addColorStop(0, 'rgba(15, 81, 50, 0.06)');
+      grad1.addColorStop(1, 'rgba(248, 250, 247, 0)');
+      context.fillStyle = grad1;
+      context.beginPath();
+      context.arc(w * 0.2, h * 0.2, 450, 0, Math.PI * 2);
+      context.fill();
+
+      const grad2 = context.createRadialGradient(w * 0.8, h * 0.3, 0, w * 0.8, h * 0.3, 480);
+      grad2.addColorStop(0, 'rgba(244, 185, 66, 0.07)');
+      grad2.addColorStop(1, 'rgba(248, 250, 247, 0)');
+      context.fillStyle = grad2;
+      context.beginPath();
+      context.arc(w * 0.8, h * 0.3, 480, 0, Math.PI * 2);
+      context.fill();
+    };
+
+    if (prefersReducedMotion) {
+      drawStaticBackground(ctx, width, height);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+
     // Mouse coordinates for interactive reaction
-    let mouse = { x: width * 0.5, y: height * 0.3, targetX: width * 0.5, targetY: height * 0.3 };
+    const mouse = {
+      x: width * 0.5,
+      y: height * 0.3,
+      targetX: width * 0.5,
+      targetY: height * 0.3,
+    };
     const handleMouseMove = (e: MouseEvent) => {
       mouse.targetX = e.clientX;
       mouse.targetY = e.clientY;
@@ -46,7 +93,6 @@ export default function AmbientBackground() {
     let t = 0;
     const render = () => {
       t += 0.008;
-      // Smooth lerp for mouse pointer
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
@@ -61,7 +107,6 @@ export default function AmbientBackground() {
         node.x += node.vx + Math.sin(t + i) * 0.4;
         node.y += node.vy + Math.cos(t + i * 1.5) * 0.4;
 
-        // Bounce boundaries
         if (node.x < -100) node.x = width + 100;
         if (node.x > width + 100) node.x = -100;
         if (node.y < -100) node.y = height + 100;
